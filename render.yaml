@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: eazymoviedownload
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: EMD_SECRET_KEY
+        value: "replace_with_a_strong_random_secret"
+      - key: EMD_PLUTO_URL
+        value: "https://pluto.tv/"
+      - key: EMD_DATABASE
+        value: "users.db"
